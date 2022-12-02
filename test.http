@@ -1,0 +1,13 @@
+POST https://containers-us-west-109.railway.app/usuario
+Content-Type: application/json
+
+{
+    "nombre": "Pedro",
+    "apellido": "Ruiz",
+    "correo": "pruiz@hotmail.com",
+    "contrasenia": "1234"
+}
+
+###
+
+GET https://containers-us-west-109.railway.app/usuario/getAll
