@@ -5,4 +5,6 @@ export { default as producto } from './producto.js'
 export { default as categoria } from './categoria.js'
 export { default as pre_armado_producto } from './pre_armado_producto.js'
 export { default as pre_armado } from './pre_armado.js'
-
+export { default as Reporte } from './reporte.js'
+export { default as Reseña } from './reseña.js'
+export { default as Tipo_reseña } from './tipo_reseña.js'
