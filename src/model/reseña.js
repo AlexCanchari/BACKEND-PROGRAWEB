@@ -28,3 +28,4 @@ const Reseña = sequelize.define('reseña', {
 })
 
 export default Reseña;
+
