@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 app.use("/usuario", usuarioRoutes);
 
+
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en puerto: ${PORT}`)
 })

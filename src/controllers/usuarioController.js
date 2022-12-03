@@ -15,8 +15,8 @@ const findAll = async(req,res) => {
 }
 
 const findOne = async(req,res) => {
-    const usuario_id = req.params.id;
-    const usuario = await UsuarioRepository.findOne(usuario_id);
+    const id = req.params.usuario_id;
+    const usuario = await UsuarioRepository.findOne(id);
 
     return sendResponse(usuario,res);
 }
