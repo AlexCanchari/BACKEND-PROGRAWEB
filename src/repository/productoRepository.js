@@ -3,10 +3,9 @@ import producto from '../model/producto.js'
 
 const create = async (producto) => {
         const newproducto = await producto.create({
-            nombre: producto.nombre,
-            apellido: producto.apellido,
-            correo:producto.correo,
-            contrasenia:producto.contrasenia
+            nombre: ' ',
+            precio: producto.precio,
+            descripcion: ' ', 
         });
             
         return newproducto;
