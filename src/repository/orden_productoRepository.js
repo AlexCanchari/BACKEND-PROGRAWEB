@@ -3,10 +3,7 @@ import orden_producto from '../model/orden_producto.js'
 
 const create = async (orden_producto) => {
         const neworden_producto = await orden_producto.create({
-            nombre: orden_producto.nombre,
-            apellido: orden_producto.apellido,
-            correo:orden_producto.correo,
-            contrasenia:orden_producto.contrasenia
+            
         });
             
         return neworden_producto;

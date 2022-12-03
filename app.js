@@ -4,9 +4,9 @@ import bodyParser from 'body-parser'
 
 import usuarioRoutes from './src/routes/usuario.js'
 import prearmadoRoutes from './src/routes/prearmado.js'
-import productoRoutes from './src/routes/producto.js'
-+
-const PORT = process.env.PORT || 4000
+import productoRoutes from './src/routes/producto.js';
+
+const PORT = process.env.PORT || 4000;
 
 var app = express();
 
@@ -70,4 +70,28 @@ app.get("/producto", async (req, res) => {
 
     res.send(piezas)
 })
+
+app.get("/guardarorden", async (req, res) => {
+    const usuario_id = req.body.usuario_id
+    const monto = req.body.monto
+    const direccion = req.body.direccion
+    const listaComponentes = req.body.componentes
+
+    const orden = await Orden.create({
+        usuario_id : usuario_id,
+        monto : monto,
+        direccion : direccion,
+        fecha : Date().toJSON().slice(0, 10)
+    })
+
+    for (let index = 0; index < listaComponentes.length; index++) {
+        const orden_producto = await Orden_Producto.create({
+            orden_id : orden.orden_id,
+            producto_id : listaComponentes[i].producto_id
+        })    
+    }
+
+    res.send("orden guardada")
+})
+
 export default app

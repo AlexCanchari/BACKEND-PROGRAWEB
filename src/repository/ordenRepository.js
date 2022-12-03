@@ -3,10 +3,9 @@ import orden from '../model/orden.js'
 
 const create = async (orden) => {
         const neworden = await orden.create({
-            nombre: orden.nombre,
-            apellido: orden.apellido,
-            correo:orden.correo,
-            contrasenia:orden.contrasenia
+            monto: orden.monto,
+            direccion: orden.direccion,
+            fecha:orden.fecha,
         });
             
         return neworden;
