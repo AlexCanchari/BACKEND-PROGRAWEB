@@ -2,14 +2,22 @@
 import Usuario from '../model/usuario.js'
 
 const create = async (usuario) => {
+
+    try {
         const newUsuario = await Usuario.create({
-            nombre: usuario.nombre,
-            apellido: usuario.apellido,
-            correo:usuario.correo,
-            contrasenia:usuario.contrasenia
+            nombre: nombre,
+            apellido: apellido,
+            correo:correo,
+            contrasenia:contrasenia
         });
             
         return newUsuario;
+
+    } catch(error) {
+        console.error(error)
+
+        return null;
+    }
 
 }
 
@@ -24,12 +32,12 @@ const findAll = async() => {
 
 }
 
-const findOne = async(usuario_id) => {
+const findOne = async(id) => {
 
     try {
         return await Usuario.findOne({
             where: {
-                usuario_id
+                id
             }
         })
     } catch (error) {
@@ -43,7 +51,7 @@ const update = async(usuario) => {
     try {
         const foundusuario = await Usuario.findOne({
             where: {
-                usuario_id: usuario.usuario_id
+                id: usuario.id
             }
         })
 
@@ -59,12 +67,12 @@ const update = async(usuario) => {
     }
 }
 
-const remove = async (usuario_id) => {
+const remove = async (id) => {
 
     try {
         await Usuario.destroy({
             where: {
-                usuario_id
+                id
             }
         })
 
