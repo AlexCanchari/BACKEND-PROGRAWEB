@@ -1,1 +1,5 @@
 export { default as UsuarioRepository } from './usuarioRepository.js'
+export { default as productoRepository } from './productoRepository.js'
+export { default as ordenRepository } from './ordenRepository.js'
+export { default as orden_productoRepository } from './orden_productoRepository.js'
+export { default as categoriaRepository } from './categoriaRepository.js'
