@@ -15,8 +15,23 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use("/usuario", usuarioRoutes);
+
+
+app.get("/resenainfluencer", async (req, res) => {
+    const resenas = await Resena.findAll({
+        attributes : ['video','enlace','comentario'],
+        include : {
+            model : Tipo_Resena,
+            attributes : ['nombre','descripcion']
+        }
+    })
+
+    res.send(resenas)
+})
+
 app.use("/prearmado", prearmadoRoutes);
 app.use("/producto", productoRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Servidor iniciado en puerto: ${PORT}`)
