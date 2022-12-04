@@ -1,14 +1,12 @@
 
-import pre_armado from '../model/pre_armado.js'
+import pre_armado from '../model/usuario.js'
 
-const create = async (prearmado) => {
+const create = async (usuario) => {
 
     try {
         const newPrearmado = await pre_armado.create({
-            nombre: nombre,
-            apellido: apellido,
-            correo:correo,
-            contrasenia:contrasenia
+            nombre: '',
+            descripcion: '',
         });
             
         return newPrearmado;
@@ -49,17 +47,17 @@ const findOne = async(id) => {
 
 const update = async(prearmado) => {
     try {
-        const foundusuario = await pre_armado.findOne({
+        const foundprearmado = await pre_armado.findOne({
             where: {
                 id: prearmado.id
             }
         })
 
-        foundusuario.set(prearmado);
+        foundprearmado.set(prearmado);
 
-        await foundusuario.save();
+        await foundprearmado.save();
 
-        return foundusuario;
+        return foundprearmado;
 
     } catch(error) {
         console.error(error)
@@ -84,6 +82,6 @@ const remove = async (id) => {
     }
 }
 
-const UsuarioRepository = { create, findAll, findOne, update, remove }
+const prearmadoRepository = { create, findAll, findOne, update, remove }
 
-export default UsuarioRepository
+export default prearmadoRepository

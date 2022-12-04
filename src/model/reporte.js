@@ -28,6 +28,9 @@ const Reporte = sequelize.define('reporte', {
     descripcion: {
         type: DataTypes.STRING
     },
+},{
+    freezeTableName : true,
+    timestamps: false
 })
 
 export default Reporte;

@@ -1,4 +1,4 @@
-POST https://containers-us-west-109.railway.app/usuario
+POST "http://localhost:4000/usuario"
 Content-Type: application/json
 
 {
@@ -10,4 +10,4 @@ Content-Type: application/json
 
 ###
 
-GET https://containers-us-west-109.railway.app/usuario/getAll
+GET https://containers-us-west-109.railway.app/usuario
