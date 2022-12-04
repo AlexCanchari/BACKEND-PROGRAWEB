@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from "cors";
 import bodyParser from 'body-parser'
-
+import { Resena,Tipo_Resena } from './src/model/resenas.js';
 import usuarioRoutes from './src/routes/usuario.js'
 import prearmadoRoutes from './src/routes/prearmado.js'
 import productoRoutes from './src/routes/producto.js';
