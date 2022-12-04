@@ -2,7 +2,7 @@ import { DataTypes, Sequelize } from 'sequelize'
 
 import sequelize from '../config/database.js'
 
-const Resena = sequelize.define("resena", {
+export const Resena = sequelize.define("resena", { 
     id : {
         primaryKey : true,
         type : DataTypes.UUID,
@@ -28,7 +28,7 @@ const Resena = sequelize.define("resena", {
     freezeTableName : true
 })
 
-const Tipo_Resena = sequelize.define("tipo_resena", {
+export const Tipo_Resena = sequelize.define("tipo_resena", {
     tipo_resena_id : {
         primaryKey : true,
         type : DataTypes.UUID,
