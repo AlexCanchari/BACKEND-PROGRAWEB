@@ -3,7 +3,7 @@ import { DataTypes, Sequelize } from 'sequelize'
 import sequelize from '../config/database.js'
 
 const Usuario = sequelize.define('usuario', {
-    id: {
+    usuario_id: {
         primaryKey: true,
         type:DataTypes.UUID,
         defaultValue:Sequelize.UUIDV4
@@ -35,6 +35,9 @@ const Usuario = sequelize.define('usuario', {
     telefono: {
         type: DataTypes.INTEGER
     }
+},{
+    freezeTableName : true,
+    timestamps: false
 })
 
 export default Usuario;

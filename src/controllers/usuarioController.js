@@ -15,8 +15,8 @@ const findAll = async(req,res) => {
 }
 
 const findOne = async(req,res) => {
-    const id = req.params.id;
-    const usuario = await UsuarioRepository.findOne(id);
+    const usuario_id = req.params.id;
+    const usuario = await UsuarioRepository.findOne(usuario_id);
 
     return sendResponse(usuario,res);
 }
@@ -29,9 +29,9 @@ const update = async(req,res) => {
 
 const remove = async(req,res) => {
 
-    const id = req.params.id;
+    const usuario_id = req.params.id;
 
-    const usuario = await UsuarioRepository.remove(id);
+    const usuario = await UsuarioRepository.remove(usuario_id);
 
     return sendResponse(usuario,res);
 }
